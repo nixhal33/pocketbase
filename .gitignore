@@ -12,6 +12,9 @@ coverage.out
 # plaintask todo files
 *.todo
 
+ui/.env
+ui/.env-development
+
 # generated markdown previews
 README.html
 CHANGELOG.html
