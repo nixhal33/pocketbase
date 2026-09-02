@@ -116,6 +116,16 @@ func main() {
 		Priority: 999, // execute as latest as possible to allow users to provide their own route
 	})
 
+        app.OnServe().Bind(&hook.Handler[*core.ServeEvent]{
+  	       Func: func(e *core.ServeEvent) error {
+  		e.Router.GET("/", func(e *core.RequestEvent) error {
+  			return e.Redirect(302, "/_/")
+  		})
+
+  		return e.Next()
+  	       },
+        })
+
 	if err := app.Start(); err != nil {
 		log.Fatal(err)
 	}
