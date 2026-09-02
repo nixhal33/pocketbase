@@ -13,7 +13,7 @@ coverage.out
 *.todo
 
 ui/.env
-ui/.env-development
+ui/.env.development
 
 # generated markdown previews
 README.html
